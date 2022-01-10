@@ -2,7 +2,7 @@
   "name": "express_starter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "tsc-watch --onSuccess \"ts-node dist/app.js\""
   },
