@@ -29,7 +29,7 @@ services:
       - MYSQL_DATABASES=main
     volumes:
       - ./mysql/init:/docker-entrypoint-initdb.d
-      - ./mysql/data:/var/lib/mysql
+      # - ./mysql/data:/var/lib/mysql
     networks:
       - db-net
   nodeapp:
