@@ -6,6 +6,7 @@ services:
     command: redis-server --requirepass redispassword1 --port 6379
     container_name: redis_boot
     hostname: redis_boot
+    restart: unless-stopped
     labels:
       - "name=redis"
       - "mode=standalone"
@@ -18,7 +19,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     # mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
     container_name: mysql_master
-    restart: always
+    restart: unless-stopped
     ports:
       - "3306:3306"
     environment:
@@ -44,7 +45,7 @@ services:
       - mysqldb
     volumes:
       - ./src:/usr/app/src
-    restart: "unless-stopped"
+    restart: unless-stopped
 
 networks:
   db-net:
